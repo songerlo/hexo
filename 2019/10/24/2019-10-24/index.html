@@ -50,30 +50,31 @@
   };
 </script>
 
-  <meta name="description" content="噜啦啦">
-<meta property="og:type" content="website">
-<meta property="og:title" content="songer blogs">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="代码层面v-if和v-show区分使用场景v-if 是 真正 的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建；也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。v-show 就简单得多， 不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 的 display 属性进行切换。所以，v-if 适用于在运行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VUE项目性能优化">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;24&#x2F;2019-10-24&#x2F;index.html">
 <meta property="og:site_name" content="songer blogs">
-<meta property="og:description" content="噜啦啦">
+<meta property="og:description" content="代码层面v-if和v-show区分使用场景v-if 是 真正 的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建；也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。v-show 就简单得多， 不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 的 display 属性进行切换。所以，v-if 适用于在运行">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-24T09:02:05.642Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2019/10/24/2019-10-24/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>songer blogs</title>
+  <title>VUE项目性能优化 | songer blogs</title>
   
 
 
@@ -170,10 +171,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/hexo/2019/10/24/2019-10-24/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -187,8 +188,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/hexo/2019/10/24/2019-10-24/" class="post-title-link" itemprop="url">VUE项目性能优化</a>
+          VUE项目性能优化
         </h1>
 
         <div class="post-meta">
@@ -213,7 +213,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="代码层面"><a href="#代码层面" class="headerlink" title="代码层面"></a>代码层面</h3><h4 id="v-if和v-show区分使用场景"><a href="#v-if和v-show区分使用场景" class="headerlink" title="v-if和v-show区分使用场景"></a><strong>v-if</strong>和<strong>v-show</strong>区分使用场景</h4><p>v-if 是 真正 的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建；也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。<br>v-show 就简单得多， 不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 的 display 属性进行切换。<br>所以，v-if 适用于在运行时很少改变条件，不需要频繁切换条件的场景；v-show 则适用于需要非常频繁切换条件的场景。</p>
+        <h3 id="代码层面"><a href="#代码层面" class="headerlink" title="代码层面"></a>代码层面</h3><h4 id="v-if和v-show区分使用场景"><a href="#v-if和v-show区分使用场景" class="headerlink" title="v-if和v-show区分使用场景"></a><strong>v-if</strong>和<strong>v-show</strong>区分使用场景</h4><p>v-if 是 真正 的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建；也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。<br>v-show 就简单得多， 不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 的 display 属性进行切换。<br>所以，v-if 适用于在运行时很少改变条件，不需要频繁切换条件的场景；v-show 则适用于需要非常频繁切换条件的场景。</p>
 <h4 id="computed-和-watch-区分使用场景"><a href="#computed-和-watch-区分使用场景" class="headerlink" title="computed 和 watch  区分使用场景"></a><strong>computed</strong> 和 <strong>watch</strong>  区分使用场景</h4><p>computed： 是计算属性，依赖其它属性值，并且 computed 的值有缓存，只有它依赖的属性值发生改变，下一次获取 computed 的值时才会重新计算 computed  的值；<br>watch： 更多的是「观察」的作用，类似于某些数据的监听回调 ，每当监听的数据变化时都会执行回调进行后续操作；</p>
 <blockquote>
 <p>运用场景：</p>
@@ -254,24 +254,24 @@
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img <span class="attribute">v-lazy</span>=<span class="string">"/static/img/1.png"</span>&gt;</span><br></pre></td></tr></table></figure>
 <p>以上为 vue-lazyload 插件的简单使用，如果要看插件的更多参数选项，可以查看 vue-lazyload 的 <a href="https://github.com/hilongjw/vue-lazyload" target="_blank" rel="noopener">github地址。</a> </p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+
       </footer>
+    
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -300,6 +300,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码层面"><span class="nav-number">1.</span> <span class="nav-text">代码层面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#v-if和v-show区分使用场景"><span class="nav-number">1.1.</span> <span class="nav-text">v-if和v-show区分使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#computed-和-watch-区分使用场景"><span class="nav-number">1.2.</span> <span class="nav-text">computed 和 watch  区分使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-for-遍历必须为-item-添加-key，且避免同时使用-v-if"><span class="nav-number">1.3.</span> <span class="nav-text">v-for 遍历必须为 item 添加 key，且避免同时使用 v-if</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#长列表性能优化"><span class="nav-number">1.4.</span> <span class="nav-text">长列表性能优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件得销毁"><span class="nav-number">1.5.</span> <span class="nav-text">事件得销毁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图片资源懒加载"><span class="nav-number">1.6.</span> <span class="nav-text">图片资源懒加载</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
